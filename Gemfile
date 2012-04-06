@@ -9,10 +9,10 @@ gem 'sqlite3'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 gem 'pg'
-gem 'devise'
+gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'cancan'
 gem 'carrierwave'
-gem 'ckeditor'
+gem "ckeditor", "3.7.0.rc3"
 gem 'mini_magick'
 
 
