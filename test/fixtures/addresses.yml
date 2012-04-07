@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  line_1: MyString
+  line_2: MyString
+  city: MyString
+  province: MyString
+  country: MyString
+  telephone: MyString
+  mobile: MyString
+
+two:
+  line_1: MyString
+  line_2: MyString
+  city: MyString
+  province: MyString
+  country: MyString
+  telephone: MyString
+  mobile: MyString
