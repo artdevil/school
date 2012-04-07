@@ -1,0 +1,33 @@
+<div class="row-fluid">
+	<div class="span1">
+		&nbsp;
+	</div>
+	<div class="span10 well">
+		<div class="row-fluid">
+			<div class="span7">
+				&nbsp;
+			</div>
+			<div class="span5">
+				<h2>Admin Login</h2>
+				<br />
+				<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+				  <div class="inputs">
+				    <%= f.input :email, :required => false, :autofocus => true, :input_html => {:class => "fullinput"} %>
+				    <%= f.input :password, :required => false, :input_html => {:class => "fullinput"} %>
+				    <%= f.input :remember_me,:label => false, :as => :boolean if devise_mapping.rememberable? %>
+					<%= f.label :remember_me,:class => "margin-left-15" %>
+				  </div>
+
+				  <div class="actions">
+				    <%= f.button :submit, "Sign in" %>
+				  </div>
+				<% end %>
+
+				<%= render :partial => "devise/shared/links" %>
+			</div>
+		</div>
+	</div>
+	<div class="span1">
+		&nbsp;
+	</div>
+</div>

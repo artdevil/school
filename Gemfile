@@ -14,6 +14,8 @@ gem 'cancan'
 gem 'carrierwave'
 gem "ckeditor", "3.7.0.rc3"
 gem 'mini_magick'
+gem 'kaminari'
+gem "meta_search", :git => "git://github.com/ernie/meta_search.git"
 
 
 # Gems used only for assets and not required

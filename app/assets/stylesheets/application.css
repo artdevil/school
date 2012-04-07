@@ -10,3 +10,132 @@
  *
  *= require bootstrap_and_overrides
 */
+
+/* padding, margin align-text*/
+.padding-top-up-9{
+	padding-top: 10px;
+}
+
+.padding-bottom-up-5{
+	padding-top: 5px;
+}
+
+.margin-left-15{
+	margin-left: 15px;
+}
+
+.margin-right-10{
+	margin-right: 10px;
+}
+
+.text-right{
+	text-align: right;
+}
+
+
+/* full bar */
+.fullinput{
+	width: 95%;
+}
+
+/* text color */
+abbr{
+	color: red;
+}
+
+/* error */
+span.help-inline{
+	display: block;
+	font-weight: bold;
+}
+
+.paging{
+	text-align: right;
+}
+
+/* tabel */
+.table{
+	display: table;
+}
+.table-row{
+	display: table-row;
+	width: 100%;
+}
+
+.t1{
+	display: table-cell;
+	padding: 5px 0 5px 0;
+	width: 5%;
+	text-align: left;
+}
+
+.t2{
+	display: table-cell;
+	padding: 5px 0 5px 0;
+	width: 20%;
+}
+
+.t3{
+	display: table-cell;
+	padding: 5px 0 5px 0;
+	width: 30%;
+}
+
+.t4{
+	display: table-cell;
+	padding: 5px 0 5px 0;
+	width: 40%;
+}
+
+.t5{
+	display: table-cell;
+	padding: 5px 0 5px 0;
+	width: 50%;
+}
+
+.t6{
+	display: table-cell;
+	padding: 5px 0 5px 0;
+	width: 60%;
+}
+
+.t7{
+	display: table-cell;
+	padding: 5px 0 5px 0;
+	width: 75%;
+}
+
+.action{
+	text-align: right;
+}
+
+.odd{
+	background: white;
+}
+
+.no{
+	padding-left: 5px;
+}
+
+.head{
+	font-weight: bold;
+}
+
+.head a{
+	color: black;
+	text-decoration: none;
+}
+
+.asc {
+  background: url(up_arrow.gif);
+  background-repeat:no-repeat;
+	background-position: right;
+	padding-right: 10px;
+}
+
+.desc {
+  	background: url(down_arrow.gif);
+	background-repeat:no-repeat;
+	background-position: right;
+	padding-right: 10px;
+}

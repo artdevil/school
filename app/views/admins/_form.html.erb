@@ -1,0 +1,7 @@
+<%= simple_form_for @admin,:html => { :class => 'form-vertical'} do |f| %>
+	<%= f.input :email %>
+	<%= f.input :password %>
+	<%= f.input :password_confirmation %>
+	<%= f.button :submit , :class => 'btn-primary' %>
+	<%= link_to "back", admins_path, :class => "btn btn-danger" %>
+<% end %>
