@@ -5,7 +5,6 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'taps'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
@@ -30,14 +29,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do 
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-  gem 'sqlite3', '1.3.5'
+group :production do
+  gem "pg"
 end
 
 
-group :production do
-  gem "pg"
+group :development, :test do 
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'sqlite3', '1.3.5'
 end
 
 gem 'jquery-rails'
