@@ -1,0 +1,54 @@
+<div class="row-fluid">
+	<div class="span12">
+        <div class="well">
+			<div class="row-fluid">
+				<div class="span8">
+					<h1>User Admin</h1>
+				</div>
+				<div class="span4 padding-top-up-5 text-right">
+					<%= link_to 'Add teacher',new_teacher_path, :class=> "btn btn-primary btn-large" %>
+				</div>
+			</div>
+    	</div>
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span9">
+        <div class="well">
+			<div class="table">
+				<div class="table-row">
+					<div class="t1 head no">No</div>
+					<div class="t2 head"><%= sortable "name" %></div>
+				</div>
+				<% a = 1%>
+				<% @subjects.each do |f| %>
+					<div class="table-row <%= cycle('odd', 'even') %>">
+						<div class="t1 no"><%= a %></div>
+						<div class="t2"><%= f.name %></div>
+						<div class="t3 action">
+							<%= link_to 'show',subject_path(f), :class => 'margin-right-10' %> 
+							<%= link_to 'edit',edit_subject_path(f),:class => 'margin-right-10' %>
+							<%= link_to 'delete', f,:method => :delete, :confirm => "are you sure ?",:class => 'margin-right-10' %>
+						</div>
+					</div>
+					<% a= a+1 %>
+				<% end %>
+			</div>
+			<hr />
+			<div class="paging">
+				<%= paginate @subjects %>
+			</div>
+    	</div>
+	</div>
+	<div class="span3">
+		<div class="well">
+			<h3>Filter Search</h3>
+			<br />
+			<%= form_for @search, :url => subjects_path, :html => {:method => :get} do |f| %>
+				<%= f.label :name %>
+				<%= f.text_field :name_contains %>
+				<%= f.submit :search, :class => "btn btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,52 @@
+<%= simple_form_for @teacher,:html => { :class => 'form-vertical'} do |f| %>
+	<div class="row-fluid">
+		<div class="span6">
+			<h3>Common information</h3>
+			<hr />
+			<% @teacher.build_address unless @teacher.address %>
+			<%= f.input :picture, :as => :file %>
+			<%= f.input :email %>
+			<%= f.input :name %>
+			<%= f.input :nip %>
+			<%= f.input :gender, :collection => ['pria',"wanita"] %>
+			<%= f.input :birth_place %>
+			<%= f.input :birth_day,:start_year => Date.today.year - 50 %>
+			<%= f.input :religion,:collection => ['Islam',"Kristen Katolik","Kristen Protestan", "Hindu", "Budha"] %>
+		</div>
+		<div class="span6">
+			<h3>Address Information</h3>
+			<hr />
+			<%= f.simple_fields_for :address do |n| %>
+				<%= n.input :line_1 %>
+				<%= n.input :line_2 %>
+				<%= n.input :country, :include_blank => false, :priority => ["Indonesia"] %>
+				<%= n.input :city %>
+				<%= n.input :province %>
+				<%= n.input :mobile %>
+				<%= n.input :telephone %>
+			<% end %>
+			<br />
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<h3>Position Information</h3>
+			<hr />
+			<%= f.input :level, :collection => ["1","2","3"] %>
+			<%= f.association :subject %>
+		</div>
+		<div class="span6">
+			<h3>Security Information</h3>
+			<hr />
+			    <%= f.input :password, :required => true %>
+				<%= f.input :password_confirmation, :required => false %>
+		</div>
+	</div>
+	<hr />
+	<div class="row-fluid">
+		<div class="span12">
+			<%= f.button :submit , :class => 'btn-primary' %>
+			<%= link_to "back", :back , :class => "btn btn-danger" %>
+		</div>
+	</div>
+<% end %>

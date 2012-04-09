@@ -1,11 +1,14 @@
-School::Application.routes.draw do
+School::Application.routes.draw do  
+  
+  mount Ckeditor::Engine => '/ckeditor'
+
+  resources :subjects
+  devise_for :teachers, :path => "teacheraccount", :path_names => { :sign_in => 'login', :sign_out => 'logout' }
   resources :teachers
   resources :admins
   devise_for :admins, :path => "adminaccount", :path_names => { :sign_in => 'login', :sign_out => 'logout' }
 
   root :to => 'pages#index'
-  mount Ckeditor::Engine => '/ckeditor'
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,18 @@
+<%= simple_form_for @subject,:html => { :class => 'form-vertical'} do |f| %>
+	<div class="row-fluid">
+		<div class="span12">
+			<h3>Subject Information</h3>
+			<hr />
+			<%= f.input :name %>
+			<%= f.label :description %>
+			<%= f.cktext_area :description, :toolbar => 'Basic'%>
+		</div>
+	</div>
+	<hr />
+	<div class="row-fluid">
+		<div class="span12">
+			<%= f.button :submit , :class => 'btn-primary' %>
+			<%= link_to "back", :back , :class => "btn btn-danger" %>
+		</div>
+	</div>
+<% end %>

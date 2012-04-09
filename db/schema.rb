@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120406114813) do
+ActiveRecord::Schema.define(:version => 20120408004959) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "line_1"
+    t.string   "line_2"
+    t.string   "city"
+    t.string   "province"
+    t.string   "country"
+    t.string   "telephone"
+    t.string   "mobile"
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -45,6 +59,13 @@ ActiveRecord::Schema.define(:version => 20120406114813) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
+  create_table "subjects", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "teachers", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -58,6 +79,15 @@ ActiveRecord::Schema.define(:version => 20120406114813) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
+    t.string   "nip"
+    t.string   "gender"
+    t.string   "birth_place"
+    t.date     "birth_day"
+    t.string   "religion"
+    t.string   "level"
+    t.string   "picture"
+    t.integer  "subject_id"
   end
 
   add_index "teachers", ["email"], :name => "index_teachers_on_email", :unique => true

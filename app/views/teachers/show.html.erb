@@ -1,0 +1,92 @@
+<div class="row-fluid">
+	<div class="span12">
+        <div class="well">
+			<div class="row-fluid">
+				<div class="span8">
+					<h1>Teacher Information</h1>
+				</div>
+			</div>
+    	</div>
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span9">
+        <div class="well">
+			<h3>Common Information</h3>
+			<hr />
+			<div class="table">
+				<div class="table-row">
+					<div class="t2">Name</div><div class="t1">:</div><div class="t8"><%= @teacher.name %></div>
+				</div>
+				<div class="table-row">
+					<div class="t2">NIP</div><div class="t1">:</div><div class="t8"><%= @teacher.nip %></div>
+				</div>
+				<div class="table-row">
+					<div class="t2">Email</div><div class="t1">:</div><div class="t8"><%= @teacher.email %></div>
+				</div>
+				<div class="table-row">
+					<div class="t2">Gender</div><div class="t1">:</div><div class="t8"><%= @teacher.gender %></div>
+				</div>
+				<div class="table-row">
+					<div class="t2">place / birth day</div>
+					<div class="t1">:</div>
+					<div class="t8"><%= @teacher.birth_place %> / <%= @teacher.birth_day.strftime("%d %B %Y")%></div>
+				</div>
+				<div class="table-row">
+					<div class="t2">Religion</div><div class="t1">:</div><div class="t8"><%= @teacher.religion %></div>
+				</div>
+			</div>
+			<br />
+			<h3>Address Information</h3>
+			<hr />
+			<div class="table">
+				<div class="table-row">
+					<div class="t2">Address 1</div><div class="t1">:</div><div class="t8"><%= @teacher.address.line_1 %></div>
+				</div>
+				<% if !@teacher.address.line_2 %>
+					<div class="table-row">
+						<div class="t2">Address 2</div><div class="t1">:</div><div class="t8"><%= @teacher.address.line_2 %></div>
+					</div>
+				<% end %>
+				<div class="table-row">
+					<div class="t2">City</div><div class="t1">:</div><div class="t8"><%= @teacher.address.city %></div>
+				</div>
+				<div class="table-row">
+					<div class="t2">Province</div><div class="t1">:</div><div class="t8"><%= @teacher.address.province %></div>
+				</div>
+				<div class="table-row">
+					<div class="t2">Country</div><div class="t1">:</div><div class="t8"><%= @teacher.address.country %></div>
+				</div>
+				<div class="table-row">
+					<div class="t2">Mobile</div><div class="t1">:</div><div class="t8"><%= @teacher.address.mobile %></div>
+				</div>
+				<% if !@teacher.address.telephone %>
+					<div class="table-row">
+						<div class="t2">Telephone</div><div class="t1">:</div><div class="t8"><%= @teacher.address.telephone %></div>
+					</div>
+				<% end %>
+			</div>
+			<br />
+			<h3>Position Information</h3>
+			<hr />
+			<div class="table">
+				<div class="table-row">
+					<div class="t2">Level</div><div class="t1">:</div><div class="t8"><%= @teacher.level %></div>
+				</div>
+				<div class="table-row">
+					<div class="t2">Subject</div><div class="t1">:</div><div class="t8"><%= @teacher.subject.name %></div>
+				</div>
+			</div>
+			<hr />
+			<%= link_to "back", :back , :class => "btn btn-primary" %>
+    	</div>
+	</div>
+	<div class="span3">
+		<div class="well">
+			<h3>Profile Picture</h3>
+			<hr />
+			<%= image_tag(@teacher.picture_url.to_s) %>
+		</div>
+	</div>
+</div>
+

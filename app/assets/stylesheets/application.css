@@ -139,3 +139,11 @@ span.help-inline{
 	background-position: right;
 	padding-right: 10px;
 }
+
+/* simple_form */
+.controls{
+	width: 400px;
+}
+.date{
+	width: 70px;
+}

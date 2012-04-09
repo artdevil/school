@@ -12,11 +12,12 @@ gem 'pg'
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'cancan'
 gem 'carrierwave'
-gem "ckeditor", "3.7.0.rc3"
+gem "ckeditor", :git => "https://github.com/galetahub/ckeditor.git"
 gem 'mini_magick'
 gem 'kaminari'
 gem "meta_search", :git => "git://github.com/ernie/meta_search.git"
-
+gem 'jquery_datepicker'
+gem 'country_select'
 
 # Gems used only for assets and not required
 # in production environments by default.
