@@ -1,5 +1,7 @@
 School::Application.routes.draw do  
   
+  devise_for :students
+
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :subjects

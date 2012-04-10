@@ -34,6 +34,12 @@
 				<li class="divider-vertical"></li>
 				<li><%= link_to 'Logout', destroy_admin_session_path,:method => :delete %></li>
 	        </ul>
+			<% elsif current_teacher %>
+				<ul class="nav pull-right">
+		            <li class="padding-top-up-9">Welcome, <%= current_teacher.email %></li>
+					<li class="divider-vertical"></li>
+					<li><%= link_to 'Logout', destroy_teacher_session_path,:method => :delete %></li>
+		        </ul>
 		<% end %>
       </div><!--/.nav-collapse -->
     </div>
