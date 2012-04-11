@@ -3,10 +3,10 @@
         <div class="well">
 			<div class="row-fluid">
 				<div class="span8">
-					<h1>User Admin</h1>
+					<h1>User Student</h1>
 				</div>
 				<div class="span4 padding-top-up-5 text-right">
-					<%= link_to 'Add Subject',new_subject_path, :class=> "btn btn-primary btn-large" %>
+					<%= link_to 'Add Student',new_student_path, :class=> "btn btn-primary btn-large" %>
 				</div>
 			</div>
     	</div>
@@ -18,16 +18,23 @@
 			<div class="table">
 				<div class="table-row">
 					<div class="t1 head no">No</div>
+					<div class="t2 head"><%= sortable "nis" %></div>
 					<div class="t2 head"><%= sortable "name" %></div>
+					<div class="t2 head"><%= sortable "email" %></div>
+					<div class="t2 head"><%= sortable "level" %></div>
+					<div class="t3 head">&nbsp;</div>
 				</div>
 				<% a = 1%>
-				<% @subjects.each do |f| %>
+				<% @students.each do |f| %>
 					<div class="table-row <%= cycle('odd', 'even') %>">
 						<div class="t1 no"><%= a %></div>
+						<div class="t2"><%= f.nis %></div>
 						<div class="t2"><%= f.name %></div>
+						<div class="t2"><%= f.email %></div>
+						<div class="t2"><%= f.level %></div>
 						<div class="t3 action">
-							<%= link_to 'show',subject_path(f), :class => 'margin-right-10' %> 
-							<%= link_to 'edit',edit_subject_path(f),:class => 'margin-right-10' %>
+							<%= link_to 'show',student_path(f), :class => 'margin-right-10' %> 
+							<%= link_to 'edit',edit_student_path(f),:class => 'margin-right-10' %>
 							<%= link_to 'delete', f,:method => :delete, :confirm => "are you sure ?",:class => 'margin-right-10' %>
 						</div>
 					</div>
@@ -36,7 +43,7 @@
 			</div>
 			<hr />
 			<div class="paging">
-				<%= paginate @subjects %>
+				<%= paginate @students %>
 			</div>
     	</div>
 	</div>
@@ -44,9 +51,15 @@
 		<div class="well">
 			<h3>Filter Search</h3>
 			<br />
-			<%= form_for @search, :url => subjects_path, :html => {:method => :get} do |f| %>
+			<%= form_for @search, :url => teachers_path, :html => {:method => :get} do |f| %>
+				<%= f.label :nis %>
+				<%= f.text_field :nis_contains %>
 				<%= f.label :name %>
 				<%= f.text_field :name_contains %>
+				<%= f.label :email %>
+				<%= f.text_field :email_contains %>
+				<%= f.label :level %>
+				<%= f.text_field :level_contains %>
 				<%= f.submit :search, :class => "btn btn-primary" %>
 			<% end %>
 		</div>

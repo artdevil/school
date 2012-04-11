@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120410032749) do
+ActiveRecord::Schema.define(:version => 20120411125357) do
 
   create_table "addresses", :force => true do |t|
     t.string   "line_1"
@@ -59,6 +59,21 @@ ActiveRecord::Schema.define(:version => 20120410032749) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
+  create_table "parents", :force => true do |t|
+    t.integer  "student_id"
+    t.string   "mother_name"
+    t.string   "mother_job"
+    t.string   "mother_phone"
+    t.string   "father_name"
+    t.string   "father_job"
+    t.string   "father_phone"
+    t.string   "carers_name"
+    t.string   "carers_job"
+    t.string   "carers_phone"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "students", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -72,6 +87,15 @@ ActiveRecord::Schema.define(:version => 20120410032749) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "teacher_id"
+    t.string   "name"
+    t.string   "nis"
+    t.string   "gender"
+    t.string   "birth_place"
+    t.date     "birth_day"
+    t.string   "religion"
+    t.string   "level"
+    t.string   "photo_student"
   end
 
   add_index "students", ["email"], :name => "index_students_on_email", :unique => true

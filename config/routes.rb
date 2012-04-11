@@ -1,9 +1,9 @@
 School::Application.routes.draw do  
-  
-  devise_for :students
+
+  devise_for :students, :path => "studentaccount", :path_names => { :sign_in => 'login', :sign_out => 'logout' }
 
   mount Ckeditor::Engine => '/ckeditor'
-
+  resources :students
   resources :subjects
   devise_for :teachers, :path => "teacheraccount", :path_names => { :sign_in => 'login', :sign_out => 'logout' }
   resources :teachers
